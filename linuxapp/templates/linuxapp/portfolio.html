@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="django form with utf-8">
+    <meta name="author" content="">
+    <title>Linux Services</title>
+
+    {% load static %}
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <style>
+      .filled {
+        width: 80%;
+        padding: 5px;
+      }
+      .spacing {
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+  <li class="nav-item"><a class="btn btn-primary btn-xl js-scroll-trigger" href="home">home</a></li>
+    <nav> <h1><center>ประวัติผู้ทำ</h1></center> </nav>
+    
+    <div>
+       <table style="width:100%; border: 1px solid black; padding: 1em;background-color:white;">
+        {% for s in services %}
+        <tr>
+          <td width:30%>asd </td>
+          <td>adada</td>
+        </tr>
+        {% endfor %}
+      </table> 
+      </div>
+  </body>
+ 
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="django form with utf-8">
+    <meta name="author" content="">
+    <title>Linux Services</title>
+
+    {% load static %}
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <style>
+      .filled {
+        width: 80%;
+        padding: 5px;
+      }
+      .spacing {
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body background='http://hdqwalls.com/wallpapers/tomb-raider-movie-4k-fq.jpg'width = "720" height = "1280">
+  <li class="nav-item">
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="home">home</a>
+          </li>
+    <nav> <h1><center>รีวิว</h1></center> </nav>
+    <div>
+      <section class="filled">
+        <form action="services" method="POST" enctype="multipart/form-data;charset=UTF-8">
+          {% csrf_token %}
+          <a>ชื่อหนัง</a>
+          <div class="spacing"><input class="filled" type="text" name="icon"/></div>
+          <a>เรื่องย่อ</a>
+          <div class="spacing"><input class="filled" type="text" name="title"/></div>
+          <a>รีวิว</a>
+          <div class="spacing"><input class="filled" type="text" name="detail" /></div>
+          <div class="spacing"><button style="padding: 2em;" type="submit">Submit</button></div>
+        </form>
+      </section>
+      <div>
+       <table style="width:100%; border: 1px solid black; padding: 1em;background-color:white;">
+        <tr>
+          <th style="width:40%; border: 1px solid black;">ชื่อหนัง</th>
+          <th style="width:30%; border: 1px solid black;">เรื่องย่อ</th>
+          <th style="width:30%; border: 1px solid black;">รีวิว</th>
+        </tr>
+        {% for s in services %}
+        <tr>
+          <td><center> <i class="fa {{s.icon}}"></i> {{ s.icon }}</center></td>
+          <td>{{ s.title }}</td>
+          <td>{{ s.detail }}</td>
+        </tr>
+        {% endfor %}
+      </table> 
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div>Copyright &copy; 2019 </div>
+      </div>
+    </footer>
+    
+  </body>
+ 
+</html>
